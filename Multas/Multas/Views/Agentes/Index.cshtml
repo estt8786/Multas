@@ -1,20 +1,24 @@
 ﻿@model IEnumerable<Multas.Models.Agentes>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Agentes";
 }
 
-<h2>Index</h2>
+<h2>Listagem de Agentes</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p> 
+    <!--html helpers => metodo que sera executado no controller-->
+    @Html.ActionLink("Novo Agente", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
+            <!-- se termina em ???????for, esta asssociado ao modelo, mostra o atributo-->
+            <!-- mostrar o NOME do conteudo do atributo-->
             @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th>
+            <!-- palavra model- objeto da classe Agente mostra, o nome do atributo pode ser qualquer nome dos 2 lados-->
             @Html.DisplayNameFor(model => model.Esquadra)
         </th>
         <th>
@@ -23,21 +27,22 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var agente in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Nome)
+            <!-- mostrar o conteudo do atributo-->
+            @Html.DisplayFor(modelItem => agente.Nome)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Esquadra)
+            @Html.DisplayFor(modelItem => agente.Esquadra)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Fotografia)
+            @Html.DisplayFor(modelItem => agente.Fotografia)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Editar", "Edit", new { id=agente.ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=agente.ID }) |
+            @Html.ActionLink("Apagar", "Delete", new { id=agente.ID })
         </td>
     </tr>
 }
