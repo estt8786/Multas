@@ -24,7 +24,7 @@ namespace Multas.Models {
         //[Required]
         [Required(ErrorMessage = "Por favor, escreva o Nome do Agente! É de preenchimento obrigatório!")]
         [StringLength(40)]
-        [RegularExpression("[A-ZÁÉÍÓÚÂ][a-záéíóúàèìòùâêîôûçñ]+(( (e|(d(e|a|o)(s)?) )? |-|')[A-ZÁÉÍÓÚÂ][a-záéíóúàèìòùâêîôûçñ]+){1,3}", 
+        [RegularExpression(("[A-ZÁÉÍÓÚÂ][a-záéíóúàèìòùâêîôûçñ]+(( (e|(d(e|a|o)(s)?) )? |-|')[A-ZÁÉÍÓÚÂ][a-záéíóúàèìòùâêîôûçñ]+){1,3}"), 
             ErrorMessage = "Só pode escrever letras no nome. Deve começar por uma maiúscula!")]
         public string Nome { get; set; }
 

@@ -38,13 +38,17 @@
         </td>
         <td>
             @*
-                mostra o conteúdo do campo Fotografia
-                @Html.DisplayFor(modelItem => agente.Fotografia)
+            mostra o conteúdo do campo Fotografia - apresenta a imagem da foto
+            queremos mostrar a imagem do Agente
 
-                queremos mostrar a imagem do Agente
+            @Html.DisplayFor(modelItem => agente.Fotografia)
             *@
-            <img src="~/Imagens/@agente.Fotografia" height="50" />
 
+            <img src="~/Imagens/@agente.Fotografia" 
+                 alt="imagem do agente @agente"
+                 title="@agente.Nome"
+                 width="50" />
+                
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=agente.ID }) |
